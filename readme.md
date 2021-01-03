@@ -1,1 +1,1 @@
-### JHU-DSCI Practical Machine Learning - Peer-graded Assignment
+### JHU-DSCI Practical Machine Learning - Peer-Graded Assignment
