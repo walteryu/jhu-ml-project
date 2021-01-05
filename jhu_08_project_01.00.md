@@ -5,11 +5,15 @@
 
 ### Submission Notes
 
-1. This markdown file is an analysis of the Human Activity Recognition [dataset][1.00].
+1. This markdown file is an analysis of the Human Activity Recognition [dataset][01.00].
 
-[1.00]: http://web.archive.org/web/20161224072740/http:/groupware.les.inf.puc-rio.br/har
+[01.00]: http://web.archive.org/web/20161224072740/http:/groupware.les.inf.puc-rio.br/har
 
 2. Some charts and analysis output have been commented out to minimize overall length of document. Given all the assignment questions, it was a challenge to document all my work while keeping document below 6 pages.
+
+3. The course mentor [example project][01.01] was referenced while developing this project.
+
+[01.01]: http://lgreski.github.io/practicalmachinelearning/
 
 ### Assignment Instructions
 
@@ -24,3 +28,10 @@
 3. Course Project Prediction Quiz Portion
 
 * Apply your machine learning algorithm to the 20 test cases available in the test data above and submit your predictions in appropriate format to the Course Project Prediction Quiz for automated grading.
+
+### Data Processing
+
+Data was prepared for train/test as follows:
+
+1. Read both CSV datasets from the HAR data website.
+2. Review data and identify null values since their values need to be removed or imputed.
