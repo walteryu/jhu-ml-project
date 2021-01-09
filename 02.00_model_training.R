@@ -46,6 +46,7 @@ fitControl <- trainControl(
 
 # train model with random forest
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
+print("model training with random forest...")
 fit <- train(x,y,
     method="rf",
     data=df_training,
@@ -59,6 +60,7 @@ fit <- train(x,y,
 
 # shutdown parallel processing cluster
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
+print("stop cluster after model training...")
 stopCluster(cluster)
 registerDoSEQ()
 
