@@ -281,6 +281,7 @@ col_subset <- c(
     "classe"
 )
 
+# verify training dataset dimensions after subset
 df_training = wt_data[col_subset]
-print("training dim")
+print("training dimensions")
 dim(df_training)
