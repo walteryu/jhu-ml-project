@@ -32,10 +32,7 @@ x <- training[,-91]
 
 # configure parallel model training
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
-install.packages("parallel")
-library(parallel)
-install.packages("doParallel")
-library(doParallel)
+print("setting up cluster and trainControl object...")
 cluster <- makeCluster(detectCores() - 1)
 registerDoParallel(cluster)
 
