@@ -15,7 +15,7 @@ wt_data = read.csv(
     url("https://raw.githubusercontent.com/walteryu/jhu-ml-project/main/WearableComputing_weight_lifting_exercises_biceps_curl_variations.csv"),
     sep=","
 )
-print("wt_data dim")
+print("wt_data dimensions: ")
 dim(wt_data)
 # names(wt_data)
 
@@ -185,15 +185,8 @@ dim(wt_data)
 # magnet_forearm_z = 0
 # classe = 0
 
-# reference: since some columns contain all nulls, then remove them
-# df_training = wt_data[colSums(!is.na(wt_data)) > 0]
-# df_training = wt_data[, colSums(is.na(wt_data)) != nrow(wt_data)]
-# print("training dim")
-# dim(df_training)
-
 # reference: subset by column names
 # https://www.statmethods.net/management/subset.html
-# col_subset <- c("v1", "v2", "v3")
 col_subset <- c(
     "user_name",
     "raw_timestamp_part_1",
