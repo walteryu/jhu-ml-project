@@ -122,5 +122,10 @@ col_subset <- c(
 
 # verify training dataset dimensions after subset
 df_training = wt_data[col_subset]
-print("training dimensions")
+print("training dimensions (before subset): ")
+dim(df_training)
+
+# subset first n rows to speed up training
+df_training = df_training[1:1000,]
+print("training dimensions (after subset): ")
 dim(df_training)
