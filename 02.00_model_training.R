@@ -1,19 +1,18 @@
 # 02.00, final project: model training
 
 # load packages: machine learning models
-# reference: course quiz and assignments
-# install.packages("caret", dependencies = TRUE)
-library(caret)
-
-# load packages: parallel model training
+# references: course quiz and assignments
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
-# install.packages("parallel")
-# install.packages("doParallel")
+install.packages("caret", dependencies = TRUE)
+install.packages("parallel")
+install.packages("doParallel")
+library(caret)
 library(parallel)
 library(doParallel)
 
 # set random number generation/seed
-# reference: course quiz and assignments
+# references: course quiz and assignments
+# https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
 RNGversion("3.5.1")
 set.seed(3523)
 
