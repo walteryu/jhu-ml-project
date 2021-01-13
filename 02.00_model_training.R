@@ -20,14 +20,9 @@ set.seed(3523)
 # references:
 # class lecture slides on random forest (set 21, slide 4)
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
-inTrain = createDataPartition(df_training$classe, p = 0.7, list=FALSE)
-training = df_training[ inTrain,]
-testing = df_training[-inTrain,]
-
-# setup x and y to speed up with model training
-# https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
-y <- training[,91]
-x <- training[,-91]
+inTrain = createDataPartition(y=train_data$classe, p = 0.7, list=FALSE)
+training = train_data[ inTrain,]
+testing = train_data[-inTrain,]
 
 # configure parallel model training
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
@@ -46,16 +41,11 @@ fitControl <- trainControl(
 # train model with random forest
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
 print("model training with random forest...")
-fit <- train(x,y,
+fit <- train(classe ~ .,
     method="rf",
-    data=df_training,
+    data=train_data,
     trControl = fitControl
 )
-# fit <- train(classe ~ .,
-#     method="rf",
-#     data=df_training,
-#     trControl = fitControl
-# )
 
 # shutdown parallel processing cluster
 # https://github.com/lgreski/datasciencectacontent/blob/7f88642673eeb5913459eb05bd5b58734c8f0bd5/markdown/pml-randomForestPerformance.md
